@@ -16,11 +16,8 @@ ActiveRecord::Schema.define(version: 20171220204321) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "date_time"
     t.string "title"
     t.string "duration"
-    t.string "street_address"
-    t.string "city"
     t.string "description"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -29,8 +26,7 @@ ActiveRecord::Schema.define(version: 20171220204321) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password"
-    t.string "avatar"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
