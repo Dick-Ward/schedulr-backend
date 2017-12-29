@@ -11,9 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
-    user = User.new(user_params)
-    render json: user
+    user = User.new(email: params[:email], password: params[:password])
+    if user.save
+      render json: {email: user.email, id: user.id}
+    else
+      render json: {error: "Invalid username or password"}, status: 401
+    end
   end
 
   def update
@@ -28,5 +31,8 @@ class UsersController < ApplicationController
     user.delete
     render json: users
   end
+
+  private
+
 
 end
