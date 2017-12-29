@@ -32,6 +32,9 @@ class UsersController < ApplicationController
     render json: users
   end
 
+  def token=
+  end
+
 
 
 end
