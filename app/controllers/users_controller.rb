@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(email: params[:email], password: params[:password])
     if user.save
-      render json: {email: user.email, id: user.id, token: issue_token({id: user.id})}
+      render json: {email: user.email, id: user.id, token: issue_token({id: user.id}), appointments: user.appointments}
     else
       render json: {error: "Invalid username or password"}, status: 401
     end
@@ -32,8 +32,7 @@ class UsersController < ApplicationController
     render json: users
   end
 
-  def token=
-  end
+
 
 
 
