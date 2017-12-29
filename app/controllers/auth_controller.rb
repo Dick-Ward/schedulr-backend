@@ -17,7 +17,7 @@ class AuthController < ApplicationController
     id = decoded_token.first['id']
     user = User.find_by(id: id)
     if user
-      render json: {email: user.email, id: user.id}
+      render json: user.to_json(only: [:email, :id, :token] , include: :appointments)
     else
       render json: {error: "Invalid token"}, status: 401
     end
