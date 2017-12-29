@@ -12,7 +12,10 @@ class AppointmentsController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
-    render json: appointment
+    if appointment.save
+      render json: appointment
+    else render json: {error: "Invalid token"}, status: 401
+    end
   end
 
   def update
@@ -32,7 +35,7 @@ class AppointmentsController < ApplicationController
 private
 
 def appointment_params
-  params.require(:appointment).permit(:user_id, :title, :duration)
+  params.require(:appointment).permit(:title, :duration, :user_id)
 end
 
 end
