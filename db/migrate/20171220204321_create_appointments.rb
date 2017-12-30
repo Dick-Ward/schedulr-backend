@@ -4,6 +4,8 @@ class CreateAppointments < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :duration
       t.integer :user_id
+      t.integer :x
+      t.integer :y
       t.timestamps
     end
   end

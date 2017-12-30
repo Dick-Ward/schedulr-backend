@@ -20,14 +20,14 @@ class AppointmentsController < ApplicationController
 
   def update
     appointment = Appointment.find(params[:id])
-    appointment.update(appoinment_params)
+    appointment.update(appointment_params)
     render json: appointment
   end
 
   def destroy
     appointment = Appointment.find(params[:id])
     appointment.delete
-    render json: appointments
+    render json: appointment
   end
 
 
@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
 private
 
 def appointment_params
-  params.require(:appointment).permit(:title, :duration, :user_id)
+  params.require(:appointment).permit(:title, :duration, :user_id, :x, :y)
 end
 
 end

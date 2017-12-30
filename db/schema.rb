@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20171220204321) do
     t.string "title"
     t.string "duration"
     t.integer "user_id"
+    t.integer "x", default: 0
+    t.integer "y", default: 67
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
