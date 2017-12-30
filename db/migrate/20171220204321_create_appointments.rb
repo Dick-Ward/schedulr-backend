@@ -4,8 +4,8 @@ class CreateAppointments < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :duration
       t.integer :user_id
-      t.integer :x
-      t.integer :y
+      t.float :x, default: 0
+      t.float :y, default: 67.5
       t.timestamps
     end
   end
