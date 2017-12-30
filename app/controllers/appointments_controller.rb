@@ -27,7 +27,6 @@ class AppointmentsController < ApplicationController
   def destroy
     appointment = Appointment.find(params[:id])
     appointment.delete
-    render json: appointment
   end
 
 
