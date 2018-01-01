@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20171220204321) do
     t.string "duration"
     t.integer "user_id"
     t.float "x", default: 0.0
-    t.float "y", default: 67.5
+    t.float "y", default: 49.5
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
