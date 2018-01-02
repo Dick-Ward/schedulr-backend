@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20171220204321) do
     t.string "title"
     t.string "duration"
     t.integer "user_id"
+    t.string "urgency", default: "normal"
     t.float "x", default: 0.0
-    t.float "y", default: 49.5
+    t.float "y", default: 14.5
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
