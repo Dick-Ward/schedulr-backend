@@ -12,8 +12,9 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(email: params[:email], password: params[:password])
+
     if user.save
-      render json: {email: user.email, id: user.id, token: issue_token({id: user.id}), appointments: user.appointments, start_time: user.start_time, end_time: user.end_time}
+      render json: {email: user.email, id: user.id, token: issue_token({id: user.id}), appointments: user.appointments, startTime: user.startTime, endTime: user.endTime}
     else
       render json: {error: "Invalid username or password"}, status: 401
     end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(start_time: params[:start_time], end_time: params[:end_time])
+    user.update(startTime: params[:startTime], endTime: params[:endTime])
     render json: user
   end
 
